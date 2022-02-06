@@ -1,0 +1,116 @@
+html, body {
+    position: relative;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: navy;
+    z-index: -3;
+}
+
+h1 {
+    margin: 0;
+}
+
+#root{
+    z-index: -2;
+}
+
+#wrapper {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+}
+
+#navigation {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    /* position: fixed; */
+    width: 100vw;
+    height: 12vh;
+    z-index: 1;
+}
+
+#navigation a {
+    margin-right: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#navigation a:hover {
+    color: rgb(175, 0, 150);
+}
+
+#footer {
+    position: fixed;
+    bottom: 15px;
+    right: 30px;
+}
+
+#main, #about, #projects, #contact {
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: calc(100vh - 12vh);
+    padding: 15px;
+    color: white;
+}
+
+#main {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+}
+
+#main h1 {
+    font-size: 20vh;
+}
+
+
+#projects {
+    display: grid;
+    grid-template-areas: 'frame frame frame';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    overflow: hidden;
+}
+
+.projectDesc {
+    opacity: 0%;
+    transition: opacity 1s;
+    color: white;
+}
+
+.one {
+    background-color: blue;
+}
+
+.two {
+    background-color: darkorchid;
+}
+
+.three {
+    background-color: darkred;
+}
+
+#spiral {
+    margin: -1vw;
+    position: fixed;
+    width: 101vw;
+    height: 40vh;
+    z-index: -1;
+}
+
+#footer img {
+    width: 5vw;
+    height: 5vw;
+    margin-left: 15px;
+}
