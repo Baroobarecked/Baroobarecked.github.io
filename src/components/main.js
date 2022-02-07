@@ -25,7 +25,7 @@ class Main extends Component {
         }
         let step = 0;
         function draw () {
-            let canvas = document.getElementById('spiral')
+            let canvas = document.querySelector('.spiral')
             let ctx = canvas.getContext('2d');
             ctx.clearRect(0, 0, 150, 150);
             
@@ -49,7 +49,7 @@ class Main extends Component {
             <div id="main">
                 <h1>Software</h1>
                 <h1>Developer</h1>
-                <canvas id="spiral" width="100vw" height="150"></canvas>
+                <canvas className="spiral" width="100vw" height="150"></canvas>
                 <p>I am a software developer focused on applying creative solutions to unique problems.</p>
             </div>
         )
