@@ -18,29 +18,37 @@ class Projects extends Component {
 
     changeStyle(e){
         e.stopPropagation()
-        e.target.style.background = 'rgba(0, 0, 0, 0.7)'
-        e.target.firstChild.style.position = 'absolute'
-        e.target.firstChild.style.height = '100%'
-        e.target.firstChild.style.width = 'auto'
-        e.target.lastChild.style.visibility = 'visible'
-        e.target.lastChild.style.background = 'none'
-        e.target.lastChild.style.height = 'auto'
+        if(e.target.attributes.class) {
+            if(e.target.attributes.class.value.includes('projectDesc')) {
+                e.target.style.background = 'rgba(0, 0, 0, 0.7)'
+                e.target.firstChild.style.position = 'absolute'
+                e.target.firstChild.style.height = '100%'
+                e.target.firstChild.style.width = 'auto'
+                e.target.lastChild.style.visibility = 'visible'
+                e.target.lastChild.style.background = 'none'
+                e.target.lastChild.style.height = 'auto'
+            }
+        }
     }
 
     revertStyle(e){
         e.stopPropagation()
-        e.target.style.background = 'rgba(0, 0, 0, 0)'
-        e.target.firstChild.style.position = 'relative'
-        e.target.firstChild.style.width = '100%'
-        e.target.firstChild.style.height = 'auto'
-        e.target.lastChild.style.visibility = 'hidden'
-        e.target.lastChild.style.height = '0%'
+        if(e.target.attributes.class) {
+            if(e.target.attributes.class.value.includes('projectDesc')) {
+                e.target.style.background = 'rgba(0, 0, 0, 0)'
+                e.target.firstChild.style.position = 'relative'
+                e.target.firstChild.style.width = '100%'
+                e.target.firstChild.style.height = 'auto'
+                e.target.lastChild.style.visibility = 'hidden'
+                e.target.lastChild.style.height = '0%'
+            }
+        }
     }
 
     render(){
         return (
             <div id="projects">
-                <div className="projectDesc one" onMouseEnter={e => {
+                <div className="projectDesc one" onMouseOver={e => {
                     this.changeStyle(e)
                 }}
                 onMouseLeave={e => {
@@ -61,7 +69,7 @@ class Projects extends Component {
                     
                     
                 </div>
-                <div className="projectDesc two" onMouseEnter={e => {
+                <div className="projectDesc two" onMouseOver={e => {
                     this.changeStyle(e)
                 }}
                 onMouseLeave={e => {
@@ -82,7 +90,7 @@ class Projects extends Component {
                         across multiple channels.
                     </p>
                 </div>
-                <div className="projectDesc three" onMouseEnter={e => {
+                <div className="projectDesc three" onMouseOver={e => {
                     this.changeStyle(e)
                 }}
                 onMouseLeave={e => {

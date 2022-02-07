@@ -11,16 +11,17 @@ import {
 import About from './components/about.js';
 import Projects from './components/projects';
 import Main from './components/main';
-import Contact from './components/contact';
+import Resume from './components/resume';
 
 render(
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />} >
                 <Route index element={<Main />} />
-                <Route exact path='about' element={<About />} />
+                <Route exact path='about' element={<About />}>
+                    <Route exact path='resume' element={<Resume />} />
+                </Route>
                 <Route exact path='projects' element={<Projects />} />
-                <Route exact path='contact' element={<Contact />} />
             </Route>
         </Routes>
     </BrowserRouter>

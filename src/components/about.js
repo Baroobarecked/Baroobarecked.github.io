@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { hot } from 'react-hot-loader';
+import { Link, Outlet } from 'react-router-dom'
 
 class About extends Component {
 
@@ -26,7 +27,7 @@ class About extends Component {
         let reverse = false;
         let count = 0;
         let color2 = 255;
-        
+
         function draw () {
             let canvas = document.querySelector('.spiral')
             let ctx = canvas.getContext('2d');
@@ -40,7 +41,7 @@ class About extends Component {
                 j += 2;
                 color -= 8.5;
             }
-            if(count === 200) {
+            if(count === 300) {
                 reverse = !reverse;
                 count = 0;
             }
@@ -84,9 +85,11 @@ class About extends Component {
                     </div>
                     <div id="profile_image">
                         Profile image
+                        <Link to='/about/resume'>Resume</Link>
                     </div>
                 </div>
                 <canvas className="spiral" width="100vw" height="150"></canvas>
+                <Outlet />
             </>
         )
     }
