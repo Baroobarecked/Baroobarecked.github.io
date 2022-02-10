@@ -5,7 +5,7 @@ import { hot } from 'react-hot-loader';
 class Main extends Component {
 
     componentDidMount(){
-        function drawLines(ctx, step, amp, color) {
+        function drawLines(ctx, step, color) {
             let width = ctx.canvas.width;
             let height = ctx.canvas.height;
             ctx.beginPath();
@@ -14,7 +14,7 @@ class Main extends Component {
             
             let x = 0;
             let y = 0;
-            let amplitude = amp;
+            let amplitude = 50;
             let frequency = 50;
             while (x < width) {
                 y = height/2 + amplitude * Math.sin((x + step)/frequency);
@@ -29,13 +29,10 @@ class Main extends Component {
             let ctx = canvas.getContext('2d');
             ctx.clearRect(0, 0, 150, 150);
             
-            // drawLines(ctx, step, 50)
-            let j = 6
             let color = 255;
-            for (let i = -4; i < canvas.height; i += 5) {
-                drawLines(ctx, i + step, j, color);
-                j += 2;
-                color -= 8.5;
+            for (let i = -4; i < canvas.height; i += 1) {
+                drawLines(ctx, i + step, color);
+                color -= 2.5;
             }
             
             step += 0.3;
@@ -47,8 +44,9 @@ class Main extends Component {
     render(){
         return (
             <div id="main">
-                <h1>Software</h1>
-                <h1>Developer</h1>
+                <h1>Aaron Brubeck:</h1>
+                <h2>Software</h2>
+                <h2>Developer</h2>
                 <canvas className="spiral" width="100vw" height="150"></canvas>
                 <p>I am a software developer focused on applying creative solutions to unique problems.</p>
             </div>

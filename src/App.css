@@ -10,6 +10,11 @@ h1 {
     margin: 0;
 }
 
+h2 {
+    font-size: 15vh;
+    margin: 0;
+}
+
 #root{
     z-index: -2;
 }
@@ -54,7 +59,7 @@ h1 {
     right: 30px;
 }
 
-#main, #about, #projects, #resume {
+#main, #about, #projects, #resume, #contact {
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.2);
     width: 100vw;
@@ -63,7 +68,7 @@ h1 {
     color: white;
 }
 
-#resume {
+#resume, #contact {
     position: fixed;
     height: 100vh;
     top: 0;
@@ -71,6 +76,12 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#contact_info {
+    background-color: black;
+    padding: 100px;
+    border-radius: 15px;
 }
 
 #resume iframe {
@@ -86,7 +97,7 @@ h1 {
 }
 
 #main h1 {
-    font-size: 20vh;
+    font-size: 18vh;
 }
 
 
@@ -114,12 +125,12 @@ h1 {
     height: 60vh;
 }
 
-.projectDesc a {
+.projectDesc a, #profile_wrapper a {
     color: white;
     text-decoration: none;
 }
 
-.projectDesc a:hover {
+.projectDesc a:hover, #profile_wrapper a:hover {
     color: rgb(175, 0, 150);
 }
 
@@ -139,7 +150,7 @@ h1 {
 .spiral {
     margin: -1vw;
     position: fixed;
-    width: 101vw;
+    width: 103vw;
     height: 40vh;
     z-index: -1;
     top: 50%;
@@ -157,11 +168,18 @@ h1 {
 
 #about_content {
     width: 80%;
+    font-size: large;
+    padding: 20px;
+}
+
+#profile_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #profile_image {
     width: 200px;
     height: 200px;
-    background: red;
     border-radius: 100%;
 }

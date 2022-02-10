@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { hot } from 'react-hot-loader';
 import { Link, Outlet } from 'react-router-dom'
+import profileImg from '../../public/profilepic.png'
 
 class About extends Component {
 
@@ -10,12 +11,12 @@ class About extends Component {
             let height = ctx.canvas.height;
             ctx.beginPath();
             ctx.lineWidth = 2;
-            ctx.strokeStyle = `rgb(${255 / 2 - color / 2}, ${0}, ${color2})`;
+            ctx.strokeStyle = `rgb(${255 / 2 - color / 2}, ${color2 - 100}, ${color2})`;
             
             let x = 0;
             let y = 0;
             let amplitude = 50;
-            let frequency = 30;
+            let frequency = 50;
             while (x < width) {
                 y = height/2 + amplitude * Math.sin((x + step)/frequency);
                 ctx.lineTo(x, y);
@@ -32,13 +33,10 @@ class About extends Component {
             let canvas = document.querySelector('.spiral')
             let ctx = canvas.getContext('2d');
             ctx.clearRect(0, 0, 150, 150);
-            
-            let j = 6
 
             let color = 255;
-            for (let i = -4; i < canvas.height; i += 5) {
+            for (let i = -4; i < canvas.height / 3; i += 1) {
                 drawLines(ctx, i + step, color2, color);
-                j += 2;
                 color -= 8.5;
             }
             if(count === 300) {
@@ -83,9 +81,10 @@ class About extends Component {
                             PostgreSQL, Python, Flask, and SQLAlchemy.
                         </p>
                     </div>
-                    <div id="profile_image">
-                        Profile image
-                        <Link to='/about/resume'>Resume</Link>
+                    <div id='profile_wrapper'>
+                        <h3>Aaron Brubeck</h3>
+                        <img id='profile_image' src={profileImg} />
+                        <p><Link to='/about/resume'>Resume</Link> | <Link to='/about/contact'>Contact</Link></p>
                     </div>
                 </div>
                 <canvas className="spiral" width="100vw" height="150"></canvas>
